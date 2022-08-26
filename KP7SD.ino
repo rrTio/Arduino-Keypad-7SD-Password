@@ -8,9 +8,9 @@ int pinE = 39;
 int pinF = 41;
 int pinG = 43;
 
-int ledR = 48;
-int ledB = 50;
-int ledC = 13;
+int ledB = 48;
+int ledR = 50;
+int ledO = 52;
 
 int delayTime = 250;
 
@@ -27,7 +27,7 @@ char keys[rows][cols] = {
 byte rowPins[rows] = {9,8,7,6};
 byte colPins[cols] = {5,4,3,2};
 
-const String password = "AB1115";
+const String password = "541236AB";
 String result;
 String typePass;
 
@@ -43,15 +43,12 @@ void setup() {
  pinMode(pinE, OUTPUT);
  pinMode(pinF, OUTPUT);
  pinMode(pinG, OUTPUT);
- pinMode(ledR, OUTPUT);
  pinMode(ledB, OUTPUT);
- pinMode(ledC, OUTPUT);
+ pinMode(ledR, OUTPUT);
+ pinMode(ledO, OUTPUT);
 }
 
 void loop() {
-
-   
-  
   char customKey = keyPressed.getKey();
 
   if(customKey)
@@ -59,7 +56,7 @@ void loop() {
     Serial.print(customKey);
     digitalWrite(ledC, HIGH);
     delay(delayTime);
-    digitalWrite(ledC, LOW);
+    digitalWrite(ledO, LOW);
     
     if(customKey == '*'){
     typePass = "";
@@ -145,9 +142,6 @@ void loop() {
     }
   if(customKey == '0'){
     zero();
-    }
-  if(customKey == 'D'){
-    off();
     }
 }
 
