@@ -54,7 +54,7 @@ void loop() {
   if(customKey)
   {
     Serial.print(customKey);
-    digitalWrite(ledC, HIGH);
+    digitalWrite(ledO, HIGH);
     delay(delayTime);
     digitalWrite(ledO, LOW);
     
